@@ -50,6 +50,9 @@
         <div class="content">
             <div class="card_LR">
                 <h2>Selecciona un archivo CSV</h2>
+                <p><span style="color: black; font-weight:bold; text-decoration: underline">
+                    CSV: columnas para dos variables y primer renglón con nombre de las variables </span>
+                </p>
                 <form method="POST" action="{{url_for('save')}}" enctype="multipart/form-data">
                     <p><input type="file" name="file" required="required"></p>
                     <p><input type="submit" value="Guardar" class="btn btn-primary btn-block btn-large"></p>

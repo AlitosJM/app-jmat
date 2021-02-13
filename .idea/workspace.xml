@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cbeb064-b21f-405e-84d8-e525702df7aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Portfolio/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portfolio/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portfolio/wsgi.py" beforeDir="false" />
-    </list>
+    <list default="true" id="8cbeb064-b21f-405e-84d8-e525702df7aa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
