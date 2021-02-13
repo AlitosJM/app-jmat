@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+requests = "*"
+pandas = "==1.1.4"
+scikit-learn = "==0.23.2"
+matplotlib = "*"
+numpy = "==1.19.3"
+gunicorn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
