@@ -223,5 +223,5 @@ def linear_regression(file_path: str = ''):
         LOG.error(f"Exception occurred err:{str(e)}")
 
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
