@@ -33,7 +33,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
-logFile = logging.FileHandler(UPLOAD_FOLDER.split("/")[0]+'/LogFile.log', mode='a')
+logFile = logging.FileHandler(UPLOAD_FOLDER+'/LogFile.log', mode='a')
 logFile.setLevel(logging.ERROR)
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s %(message)s')
 logFile.setFormatter(formatter)
@@ -215,7 +215,8 @@ def linear_regression(file_path: str = ''):
 
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], 'image.png')
             plt.savefig(image_path)
-            image_path = "../"+image_path
+            # image_path = "./"+image_path
+            image_path = image_path.replace('app', '')
             return render_template("forecasting.html", file=file_path, image=image_path, prediction_text=prediction_text)
     except Exception as e:
         LOG.exception("Exception occurred exc: ")

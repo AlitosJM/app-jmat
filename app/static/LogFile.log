@@ -1,6 +1,0 @@
-2021-02-12 18:06:36,666 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "main.py", line 104, in home
-    if not os.path.exists(app.config['UPLOAD_FOLDR']):
-KeyError: 'UPLOAD_FOLDR'
-2021-02-12 18:06:36,669 ERROR logFile Exception occurred err:'UPLOAD_FOLDR'
