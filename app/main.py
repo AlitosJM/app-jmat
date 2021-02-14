@@ -32,8 +32,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-
-logFile = logging.FileHandler(UPLOAD_FOLDER+'/LogFile.log', mode='a')
+logFile = logging.FileHandler(UPLOAD_FOLDER.replace('files','') + 'LogFile.log', mode='a')
+# logFile = logging.FileHandler(UPLOAD_FOLDER+'/LogFile.log', mode='a')
 logFile.setLevel(logging.ERROR)
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s %(message)s')
 logFile.setFormatter(formatter)
@@ -100,10 +100,11 @@ def single_linear_regression(path: str = '', x_to_predict: str = '') -> dict:
 @app.route('/')
 def home():
     try:
-        if not os.path.exists(app.config['UPLOAD_FOLDER']):
-            os.makedirs(app.config['UPLOAD_FOLDER'])
-        else:
+        if os.path.exists(app.config['UPLOAD_FOLDER']):
             csv_delete(app.config['UPLOAD_FOLDER'])
+        else:
+            os.makedirs(app.config['UPLOAD_FOLDER'])
+            raise Exception("No directory")
     except Exception as e:
         LOG.exception("Exception occurred exc: ")
         LOG.error(f"Exception occurred err:{str(e)}")
