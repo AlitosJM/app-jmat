@@ -120,7 +120,6 @@ def progress():
             yield "data:" + str(x) + "\n\n"
             x = x + 10
             time.sleep(0.5)
-
     return Response(generate(), mimetype='text/event-stream')
 
 
