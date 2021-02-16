@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import logging
 import queue
 import time
+import asyncio
 import os
 
 
@@ -112,14 +113,13 @@ def home():
         return render_template("intro.html")
 
 
-def progress():
-    def generate():
-        x = 0
-        while x <= 100:
-            yield "data:" + str(x) + "\n\n"
-            x = x + 10
-            time.sleep(0.5)
-    return generate()
+async def progress():
+    x = 0
+    while x <= 100:
+        str0 = "data:" + str(x) + "\n\n"
+        x = x + 10
+        await asyncio.sleep(0.5)
+    return await Response(progress(), mimetype='text/event-stream')
 
 
 @app.route('/home/')
