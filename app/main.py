@@ -168,6 +168,10 @@ def save():
     return redirect(url_for('get_all_posts'))
 
 
+def dummy():
+
+
+
 @app.route("/predict/<string:file_path>", methods=['GET', 'POST'])
 def linear_regression(file_path: str = ''):
     try:
