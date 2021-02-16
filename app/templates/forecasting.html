@@ -12,8 +12,8 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 	<script>
 
-    const start_task = () => {
-        var source = new EventSource("/progress/");
+    const start_task = (start) => {
+        var source = new EventSource(`/predict/${start}`);
 
 	    source.onmessage = (event) => {
 		$('.progress-bar').css('width', event.data+'%').attr('aria-valuenow', event.data);
@@ -34,16 +34,11 @@
     <div class="wrapper">
         <div class="content">
             <div class="card_LR">
-                <h1>Predicción 123456789</h1>
-                <form method="POST" action="{{url_for('linear_regression',file_path=file)}}">
-<!--                <form method="POST" action="">-->
-                <!--<form method="POST" action="/predict/" >-->
-                <!--<input type="text" name="rate" placeholder="rate" required="required" />-->
-                <!--<input type="text" name="sales in first month" placeholder="sales in first month" required="required" />-->
-                    <input type="text" name="input1" placeholder="Variable independiente" required="required" />
-<!--                    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>-->
-                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task();">Calcular</button>
-                </form>
+                <h1>Predicción</h1>
+
+                    <input type="text" name="input1" placeholder="Variable independiente" required="required"/>
+                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task('start');">Calcular</button>
+
                <br>
                <br>
                 <div class="progress" style="width: 100%;">

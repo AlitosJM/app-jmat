@@ -1,177 +1,30 @@
-2021-02-13 20:46:26,701 ERROR logFile Exception occurred exc: 
+2021-02-15 19:03:13,857 ERROR logFile Exception occurred exc: 
 Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 107, in home
-    raise Exception("No directory")
-Exception: No directory
-2021-02-13 20:46:26,704 ERROR logFile Exception occurred err:No directory
-2021-02-15 15:56:45,127 ERROR app.main Exception on /predict/cost_revenue_clean.csv [GET]
-Traceback (most recent call last):
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 1968, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 2097, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
-2021-02-15 15:56:45,129 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 15:56:45,161 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 15:58:05,911 ERROR app.main Exception on /predict/cost_revenue_clean.csv [GET]
-Traceback (most recent call last):
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 1968, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 2097, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
-2021-02-15 15:58:05,914 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 15:58:05,918 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 15:59:11,590 ERROR app.main Exception on /predict/cost_revenue_clean.csv [GET]
-Traceback (most recent call last):
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 1968, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\app.py", line 2097, in make_response
-    raise TypeError(
-TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
-2021-02-15 15:59:11,593 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 15:59:11,596 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:00:06,742 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 178, in linear_regression
-    x_to_predict = request.form["input1"]
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:00:06,743 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 159, in save
     uploaded_file = request.files['file']
   File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
     return oldcls.__getitem__(self, key)
   File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
     raise exceptions.BadRequestKeyError(key)
 werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:00:06,745 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:00:06,762 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:02:28,882 ERROR logFile Exception occurred exc: 
+2021-02-15 19:03:13,888 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-02-15 19:06:30,270 ERROR logFile Exception occurred exc: 
 Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 159, in save
     uploaded_file = request.files['file']
   File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
     return oldcls.__getitem__(self, key)
   File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
     raise exceptions.BadRequestKeyError(key)
 werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:02:28,883 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:04:09,546 ERROR logFile Exception occurred exc: 
+2021-02-15 19:06:30,273 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-02-15 19:06:45,023 ERROR logFile Exception occurred exc: 
 Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 159, in save
     uploaded_file = request.files['file']
   File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
     return oldcls.__getitem__(self, key)
   File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
     raise exceptions.BadRequestKeyError(key)
 werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:04:09,550 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:09:36,486 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
-    return oldcls.__getitem__(self, key)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:09:36,490 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:21:34,203 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
-    return oldcls.__getitem__(self, key)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:21:34,208 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:24:21,261 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
-    return oldcls.__getitem__(self, key)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:24:21,263 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:25:28,756 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
-    return oldcls.__getitem__(self, key)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:25:28,760 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:31:43,828 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 177, in linear_regression
-    x_to_predict = request.form["input1"]
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:31:43,832 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:31:49,775 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 177, in linear_regression
-    x_to_predict = request.form["input1"]
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:31:49,777 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
-    return oldcls.__getitem__(self, key)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:31:49,778 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:31:49,780 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:33:18,582 ERROR logFile Exception occurred exc: 
-Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 161, in save
-    uploaded_file = request.files['file']
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\flask\debughelpers.py", line 96, in __getitem__
-    return oldcls.__getitem__(self, key)
-  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
-    raise exceptions.BadRequestKeyError(key)
-werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2021-02-15 16:33:18,585 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-02-15 19:06:45,026 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

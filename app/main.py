@@ -112,7 +112,6 @@ def home():
         return render_template("intro.html")
 
 
-@app.route("/progress/")
 def progress():
     def generate():
         x = 0
@@ -120,8 +119,7 @@ def progress():
             yield "data:" + str(x) + "\n\n"
             x = x + 10
             time.sleep(0.5)
-
-    return Response(generate(), mimetype='text/event-stream')
+    return generate()
 
 
 @app.route('/home/')
@@ -173,6 +171,9 @@ def save():
 @app.route("/predict/<string:file_path>", methods=['GET', 'POST'])
 def linear_regression(file_path: str = ''):
     try:
+        if file_path == 'start':
+            return Response(progress(), mimetype='text/event-stream')
+
         if request.method == 'POST':
             int_features = [int(x) for x in request.form.values()]
             x_to_predict = request.form["input1"]
@@ -183,6 +184,7 @@ def linear_regression(file_path: str = ''):
                              args=(que, file_path, x_to_predict))
 
             thread0.start()
+            redirect(url_for('get_all_posts'))
             time.sleep(1.0)
             thread0.join()
             outputs = que.get()
