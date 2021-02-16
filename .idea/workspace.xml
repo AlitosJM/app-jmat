@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8cbeb064-b21f-405e-84d8-e525702df7aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/LogFile.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/LogFile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/forecasting.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forecasting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -119,6 +122,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="453" y="188" key="#Notifications" timestamp="1613345719199">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="453" y="188" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1613345719199" />
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612855861514">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -156,11 +163,11 @@
     </state>
     <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1611299614159" />
     <state width="1345" height="382" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612931880845" />
-    <state x="186" y="10" key="SettingsEditor" timestamp="1613188249186">
+    <state x="186" y="10" key="SettingsEditor" timestamp="1613425968304">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1611189989701" />
-    <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1613188249186" />
+    <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1613425968304" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1613171444153">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
