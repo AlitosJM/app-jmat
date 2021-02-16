@@ -13,6 +13,7 @@
 	<script>
 
     const start_task = (start) => {
+        var inputVal = document.getElementById("myInput").value;
         var source = new EventSource(`/predict/${start}`);
 
 	    source.onmessage = (event) => {
@@ -37,7 +38,7 @@
                 <h1>Predicción</h1>
 
                     <input type="text" name="input1" placeholder="Variable independiente" required="required"/>
-                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task('start');">Calcular</button>
+                    <button id="myInput" type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task('start');">Calcular</button>
 
                <br>
                <br>

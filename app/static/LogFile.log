@@ -28,3 +28,63 @@ Traceback (most recent call last):
     raise exceptions.BadRequestKeyError(key)
 werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
 2021-02-15 19:06:45,026 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-02-15 21:16:36,556 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 193, in linear_regression
+    x_to_predict = request.form["input1"]
+  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\datastructures.py", line 442, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-02-15 21:16:36,559 ERROR logFile Exception occurred err:400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2021-02-15 21:24:28,876 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 193, in linear_regression
+    x_to_predict = request.name["input1"]
+  File "C:\Users\JMAT\.virtualenvs\Flask05-b-tTEyOw\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'name'
+2021-02-15 21:24:28,910 ERROR logFile Exception occurred err:'Request' object has no attribute 'name'
+2021-02-15 22:12:29,244 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 197, in linear_regression
+    outputs = asyncio.run(coroutine(file_path, x_to_predict))
+  File "c:\users\jmat\appdata\local\programs\python\python38\lib\asyncio\runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "c:\users\jmat\appdata\local\programs\python\python38\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 119, in coroutine
+    await asyncio.gather(t1, t2)
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 111, in progress
+    await Response(str0, mimetype='text/event-stream')
+TypeError: object Response can't be used in 'await' expression
+2021-02-15 22:12:29,288 ERROR logFile Exception occurred err:object Response can't be used in 'await' expression
+2021-02-15 22:37:39,496 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 200, in linear_regression
+    prediction_text = 'Para '+x_to_predict+', la salida es '+str(outputs['prediction'][0])
+TypeError: can only concatenate str (not "int") to str
+2021-02-15 22:37:39,497 ERROR logFile Exception occurred err:can only concatenate str (not "int") to str
+2021-02-15 22:42:08,747 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 200, in linear_regression
+    prediction_text = 'Para '+str(x_to_predict)+', la salida es '+str(outputs['prediction'][0])
+TypeError: 'coroutine' object is not subscriptable
+2021-02-15 22:42:08,747 ERROR logFile Exception occurred err:'coroutine' object is not subscriptable
+2021-02-15 22:42:38,039 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 200, in linear_regression
+    prediction_text = 'Para '+str(x_to_predict)+', la salida es '+str(outputs['prediction'][0])
+TypeError: 'coroutine' object is not subscriptable
+2021-02-15 22:42:38,039 ERROR logFile Exception occurred err:'coroutine' object is not subscriptable
+2021-02-15 22:44:41,024 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 202, in linear_regression
+    prediction_text = 'Para '+str(x_to_predict)+', la salida es '+str(outputs['prediction'][0])
+TypeError: 'coroutine' object is not subscriptable
+2021-02-15 22:44:41,024 ERROR logFile Exception occurred err:'coroutine' object is not subscriptable
+2021-02-15 22:47:28,902 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 202, in linear_regression
+    prediction_text = 'Para '+str(x_to_predict)+', la salida es '+str(outputs['prediction'][0])
+TypeError: 'coroutine' object is not subscriptable
+2021-02-15 22:47:28,902 ERROR logFile Exception occurred err:'coroutine' object is not subscriptable

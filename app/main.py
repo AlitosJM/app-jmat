@@ -65,37 +65,63 @@ def csv_delete(path: str = ''):
             os.remove(app.config['UPLOAD_FOLDER'] + '/' + filename)
 
 
-def single_linear_regression(path: str = '', x_to_predict: str = '') -> dict:
-    time.sleep(0.5)
+async def single_linear_regression(path: str = '', x_to_predict: str = '') -> dict:
+    await asyncio.sleep(0.5)
     data = pd.read_csv(app.config['UPLOAD_FOLDER'] + '/' + path)
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     col = data.columns.values.tolist()
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     x = pd.DataFrame(data, columns=[col[0]])
     y = pd.DataFrame(data, columns=[col[1]])
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     min_max = [min(x.to_numpy()), max(x.to_numpy()), min(y.to_numpy()), max(y.to_numpy())]
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     regression = LinearRegression()
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     regression.fit(x, y)
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     final_feature = np.array([[int(x_to_predict)]])
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     y_ = regression.predict(x)
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
     prediction = regression.predict(final_feature)
-    time.sleep(0.5)
+    await asyncio.sleep(0.5)
 
     outputs = {'X': x, 'y': y, 'y_': y_, 'prediction': prediction[0], 'col': col, 'min_max': min_max}
     return outputs
+
+
+async def buffer(path, forecasting, q: asyncio.Queue):
+    await q.put(single_linear_regression(path, forecasting))
+
+
+async def progress():
+    x = 0
+    while x <= 100:
+        str0 = "data:" + str(x) + "\n\n"
+        x = x + 10
+        await asyncio.sleep(0.5)
+        Response(str0, mimetype='text/event-stream')
+        await asyncio.sleep(0.5)
+    return None
+
+
+async def coroutine(path, forecasting):
+    q = asyncio.Queue()
+    t1 = asyncio.create_task(progress())
+    t2 = asyncio.create_task(buffer(path, forecasting, q))
+    await asyncio.gather(t1, t2)
+    my_dic = await q.get()
+    q.task_done()
+    await q.join()
+    return my_dic
 
 
 @app.route('/')
@@ -111,15 +137,6 @@ def home():
         LOG.error(f"Exception occurred err:{str(e)}")
     finally:
         return render_template("intro.html")
-
-
-async def progress():
-    x = 0
-    while x <= 100:
-        str0 = "data:" + str(x) + "\n\n"
-        x = x + 10
-        await asyncio.sleep(0.5)
-    return await Response(progress(), mimetype='text/event-stream')
 
 
 @app.route('/home/')
@@ -172,24 +189,17 @@ def save():
 def linear_regression(file_path: str = ''):
     try:
         if file_path == 'start':
-            return Response(progress(), mimetype='text/event-stream')
 
-        if request.method == 'POST':
-            int_features = [int(x) for x in request.form.values()]
-            x_to_predict = request.form["input1"]
+            # int_features = [int(x) for x in request.form.values()]
+            x_to_predict = 123456789
 
             xnew = int(x_to_predict)
 
-            thread0 = Thread(target=lambda q, path, forecasting: q.put(single_linear_regression(path, forecasting)),
-                             args=(que, file_path, x_to_predict))
+            outputs = asyncio.run(coroutine(file_path, x_to_predict))
+            print("errorcito")
+            print(outputs)
 
-            thread0.start()
-            redirect(url_for('get_all_posts'))
-            time.sleep(1.0)
-            thread0.join()
-            outputs = que.get()
-
-            prediction_text = 'Para '+x_to_predict+', la salida es '+str(outputs['prediction'][0])
+            prediction_text = 'Para '+str(x_to_predict)+', la salida es '+str(outputs['prediction'][0])
             # print("-> " + prediction_text)
 
             fig = plt.figure(figsize=(10, 6))
