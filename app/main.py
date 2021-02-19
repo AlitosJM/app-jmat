@@ -12,7 +12,9 @@ import os
 
 
 # On gitBash
-# $ export FLASK_APP=main.py,
+# $ export FLASK_DEBUG=true
+# $ export FLASK_ENV="development"
+# $ export FLASK_APP=wsgi.py,
 # $ export FLASK_RUN_PORT=8000
 # $ Flask run
 

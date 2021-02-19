@@ -1,0 +1,6 @@
+2021-02-16 20:54:01,124 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 107, in home
+    raise Exception("No directory")
+Exception: No directory
+2021-02-16 20:54:01,126 ERROR logFile Exception occurred err:No directory
