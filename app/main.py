@@ -245,6 +245,7 @@ def wavelet_analysis(features: str = ''):
     try:
         if request.method == 'POST':
             if features:
+                temp = features
                 features = features[1:-1].split(',')
                 freqs = np.array(list(map(lambda x: np.float(x), features)))
 
@@ -257,7 +258,7 @@ def wavelet_analysis(features: str = ''):
             path = que.get()
             # image_path = wave(*features)
             # print(features)
-            return render_template("wavelet.html", file=None, image0=path['image_path0'],
+            return render_template("wavelet.html", file=temp, image0=path['image_path0'],
                                    image1=path['image_path1'], prediction_text='')
 
         elif request.method == 'GET':
@@ -268,8 +269,6 @@ def wavelet_analysis(features: str = ''):
 
 
 def wave(lofreq: float = 1.0, hifreq: float = 30.0):
-    time.sleep(0.5)
-
     params, rate = signal_to_test()
     signal = params['signal']
     time_signal = params['time_signal']
@@ -278,35 +277,30 @@ def wave(lofreq: float = 1.0, hifreq: float = 30.0):
     cwt = MorletCwt(srate=rate, nfrex=nfrex, lofreq=lofreq, hifreq=hifreq, graphs=True)
     signal_power = cwt.wavelet_windows(signal, False)
 
-    time.sleep(0.5)
-
     coi = cwt.coi(np.size(time_signal, 0))
     coi = 1 / coi
-
-    time.sleep(0.5)
 
     figprops = dict(figsize=(7, 7), dpi=72)
     fig = plt.figure(**figprops)
 
-    ax = plt.axes([0.2, 0.75, 0.65, 0.2])
+    ax = plt.axes([0.2, 0.75, 0.65, 0.2]) #[0.2, 0.75, 0.65, 0.2]
     ax.plot(time_signal, signal, '-', linewidth=1, color=[0.5, 0.5, 0.5])
     ax.set_title('a) {}'.format("Example"))
     ax.set_ylabel(r'{} [{}]'.format("Amplitude", "v"))
 
-    time.sleep(0.5)
-
-    bx = plt.axes([0.2, 0.37, 0.65, 0.28], sharex=ax)  # [0.1, 0.37, 0.65, 0.28]
+    bx = plt.axes([0.2, 0.27, 0.65, 0.28], sharex=ax)  # [0.1, 0.37, 0.65, 0.28]
     freqs_cwt = cwt.freqs
     bx.contourf(time_signal, np.log2(freqs_cwt), signal_power, cmap=plt.cm.viridis)
 
     # plt.plot(time_signal, np.log2(coi), 'k')
-    bx.fill(np.concatenate([time_signal, time_signal[-1:], time_signal[-1:], time_signal[:1], time_signal[:1]]),
-            np.concatenate([np.log2(coi), [1e-9], np.log2(freqs_cwt[-1:]), np.log2(freqs_cwt[-1:]), [1e-9]]),
+    bx.fill(np.concatenate([time_signal[:1], time_signal, time_signal[-1:], time_signal[-1:], time_signal[:1]]),
+            np.concatenate([np.log2(freqs_cwt[-1:]), np.log2(coi), np.log2(freqs_cwt[-1:]), [1e-9], [1e-9]]),
             'k', alpha=0.3, hatch='x')
 
     bx.set_ylim(np.log2([freqs_cwt.min(), freqs_cwt.max()]))
     bx.set_title('b) {} Wavelet Power Spectrum ({})'.format("", "Morlet prototype"))
     bx.set_ylabel('Freq (Hz)')
+    bx.set_xlabel('Time (s)')
 
     Yticks = 2 ** np.arange(np.ceil(np.log2(min(freqs_cwt))), np.ceil(np.log2(max(freqs_cwt))))
 
@@ -318,7 +312,6 @@ def wave(lofreq: float = 1.0, hifreq: float = 30.0):
 
     image_path1 = os.path.join(MorletCwt.UPLOAD_FOLDER, MorletCwt.GIF_PATH)
 
-    time.sleep(0.5)
     image_path0 = image_path0.replace('app', '')
     image_path1 = image_path1.replace('app', '')
 

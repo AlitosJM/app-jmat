@@ -129,7 +129,8 @@ class WaveletFreq:
         signal_power = np.zeros((len(frequencies), int(npnts_times)))
 
         if self.params['graphs']:
-            fig_graphs1 = plt.figure(figsize=(5, 5))
+            fig_graphs1 = plt.figure(figsize=(7, 7))
+            ax = plt.axes()
 
         for fi in range(len(frequencies)):
             s = (fwhms[fi] * (2 * np.pi - 1)) / (4 * np.pi)
@@ -139,7 +140,7 @@ class WaveletFreq:
             fx = np.roll(fx, limit_padded)
 
             if self.params['graphs']:
-                plt.clf()
+                ax.cla()
 
             if not erp_bool:
                 frequency_product = fx * signal_spectrum
@@ -161,9 +162,9 @@ class WaveletFreq:
                             max(wavelet) - min(wavelet))
 
                     wavelet = 200 * wavelet
-                    plt.plot(hz1, signal, 'g', label='Signal')
-                    plt.plot(hz1, wavelet, 'b--', label='Wavelet')
-                    plt.plot(hz1, filtered, 'r', label='Filtered signal')
+                    ax.plot(hz1, signal, 'g', label='Signal')
+                    ax.plot(hz1, wavelet, 'b--', label='Wavelet')
+                    ax.plot(hz1, filtered, 'r', label='Filtered signal')
 
             else:
                 frequency_product = fx * signal_spectrum
@@ -188,18 +189,18 @@ class WaveletFreq:
 
 
                     wavelet = 10000 * wavelet
-                    plt.plot(hz1, signal, 'g', label='Signal')
-                    plt.plot(hz1, wavelet, 'b--', label='Wavelet')
-                    plt.plot(hz1, filtered, 'r', label='Filtered signal')
+                    ax.plot(hz1, signal, 'g', label='Signal')
+                    ax.plot(hz1, wavelet, 'b--', label='Wavelet')
+                    ax.plot(hz1, filtered, 'r', label='Filtered signal')
 
             if self.params['graphs']:
-                plt.title('Spectrum', fontsize='14')
-                plt.ylabel('Amplitude', fontsize='12')
-                plt.xlabel('Frequency (Hz)', fontsize='12')
-                plt.legend()
-                plt.xlim([0, 60])
+                ax.set_title('Spectrum', fontsize='14')
+                ax.set_ylabel('Amplitude', fontsize='12')
+                ax.set_xlabel('Frequency (Hz)', fontsize='12')
+                ax.legend()
+                ax.set_xlim([0, 60])
                 # plt.draw()
-                plt.pause(0.05)
+                # plt.pause(0.05)
                 image_path = os.path.join(WaveletFreq.UPLOAD_FOLDER, 'freqWaves{i}.png'.format(i=fi))
                 plt.savefig(image_path)
 

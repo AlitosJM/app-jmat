@@ -39,7 +39,7 @@
                     Wavelet Morlet </span>
                 </p>
                 <form method="POST" action="{{url_for('wavelet_analysis',features=features)}}">
-                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task();">Calcular</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task();">Graficar</button>
                 </form>
                <br>
                <br>
@@ -50,13 +50,6 @@
                 </div>
             </div>
 
-            <div class="">
-                <p style="color:black; text-align: justify; letter-spacing: 3px; font-weight: bold;">
-                    {% if prediction_text: %}
-                    {{ prediction_text }}
-                    {% endif %}
-                </p>
-            </div>
         </div>
             <ul class="icons">
                 <li><a href={{url_for('get_all_posts')}} class="icon solid fa-arrow-alt-circle-left"></a></li>
@@ -64,13 +57,6 @@
             </ul>
     </div>
 
-        {% if image0: %}
-        <div class="content">
-            <div class="card">
-                <img src="{{image0}}" alt="Figure0" width="100%" height="100%">
-            </div>
-        </div>
-        {% endif %}
         {% if image1: %}
         <div class="content">
             <div class="card">
@@ -78,7 +64,13 @@
             </div>
         </div>
         {% endif %}
-
+        {% if image0: %}
+        <div class="content">
+            <div class="card">
+                <img src="{{image0}}" alt="Figure0" width="100%" height="100%">
+            </div>
+        </div>
+        {% endif %}
 </body>
 <footer>
     <p>Hecho en México.</p>

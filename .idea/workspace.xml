@@ -21,14 +21,42 @@
   <component name="ChangeListManager">
     <list default="true" id="8cbeb064-b21f-405e-84d8-e525702df7aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/LogFile.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/files/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves0.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves1.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves10.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves11.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves12.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves13.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves14.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves15.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves16.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves17.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves18.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves19.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves2.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves20.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves21.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves22.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves23.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves24.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves25.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves26.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves27.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves28.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves29.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves3.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves4.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves5.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves6.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves7.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves8.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves9.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/signal.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/signal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/waves.gif" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/waves.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/forecasting.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forecasting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/wavelet.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/wavelet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/wavelet_freq.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/wavelet_freq.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
