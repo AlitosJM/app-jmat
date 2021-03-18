@@ -1,6 +1,149 @@
-2021-02-16 20:54:01,124 ERROR logFile Exception occurred exc: 
+2021-03-16 22:18:07,785 ERROR logFile Exception occurred exc: 
 Traceback (most recent call last):
-  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 107, in home
-    raise Exception("No directory")
-Exception: No directory
-2021-02-16 20:54:01,126 ERROR logFile Exception occurred err:No directory
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 235, in wavelet_analysis
+    wave()
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 252, in wave
+    signal_power = cwt.wavelet_windows(signal, True)
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\wavelet_freq.py", line 115, in wavelet_windows
+    trials = np.size(signal, 1)
+  File "<__array_function__ internals>", line 5, in size
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\numpy\core\fromnumeric.py", line 3159, in size
+    return a.shape[axis]
+IndexError: tuple index out of range
+2021-03-16 22:18:07,791 ERROR logFile Exception occurred err:tuple index out of range
+2021-03-18 00:17:05,272 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 248, in wavelet_analysis
+    features = [np.float(x) for x in features]
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 248, in <listcomp>
+    features = [np.float(x) for x in features]
+ValueError: could not convert string to float: '['
+2021-03-18 00:17:05,291 ERROR logFile Exception occurred err:could not convert string to float: '['
+2021-03-18 00:18:53,903 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in wavelet_analysis
+    features = [np.float(x) for x in features]
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in <listcomp>
+    features = [np.float(x) for x in features]
+ValueError: could not convert string to float: '['
+2021-03-18 00:18:53,905 ERROR logFile Exception occurred err:could not convert string to float: '['
+2021-03-18 01:18:47,383 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in wavelet_analysis
+    freqs = np.array(list(map(lambda x: np.float(x), features)))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in <lambda>
+    freqs = np.array(list(map(lambda x: np.float(x), features)))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:18:47,386 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:19:29,450 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in wavelet_analysis
+    freqs = np.array(list(map(lambda x: np.float(x), features)))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in <lambda>
+    freqs = np.array(list(map(lambda x: np.float(x), features)))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:19:29,451 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:20:42,125 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in wavelet_analysis
+    freqs = list(map(lambda x: np.float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in <lambda>
+    freqs = list(map(lambda x: np.float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:20:42,128 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:22:10,929 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 249, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:22:10,932 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:25:23,684 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 250, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 250, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:25:23,687 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:26:58,794 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 250, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 250, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'"
+2021-03-18 01:26:58,797 ERROR logFile Exception occurred err:could not convert string to float: "'"
+2021-03-18 01:30:26,201 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:30:26,203 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:31:20,782 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 252, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 252, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:31:20,785 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:32:04,638 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 252, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 252, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:32:04,639 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:35:42,500 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:35:42,502 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:39:44,759 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'1'"
+2021-03-18 01:39:44,760 ERROR logFile Exception occurred err:could not convert string to float: "'1'"
+2021-03-18 01:40:53,150 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "['1'"
+2021-03-18 01:40:53,152 ERROR logFile Exception occurred err:could not convert string to float: "['1'"
+2021-03-18 01:41:41,230 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'"
+2021-03-18 01:41:41,232 ERROR logFile Exception occurred err:could not convert string to float: "'"
+2021-03-18 01:45:25,056 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: "'"
+2021-03-18 01:45:25,059 ERROR logFile Exception occurred err:could not convert string to float: "'"
+2021-03-18 01:46:20,152 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in wavelet_analysis
+    freqs = list(map(lambda x: float(x), features))
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 251, in <lambda>
+    freqs = list(map(lambda x: float(x), features))
+ValueError: could not convert string to float: '.'
+2021-03-18 01:46:20,153 ERROR logFile Exception occurred err:could not convert string to float: '.'

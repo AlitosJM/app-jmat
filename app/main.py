@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, Response
 from sklearn.linear_model import LinearRegression
+from .wavelet_freq import WaveletFreq as MorletCwt
 from threading import Thread, currentThread
 from .post import Post
 import pandas as pd
@@ -14,7 +15,7 @@ import os
 # On gitBash
 # $ export FLASK_DEBUG=true
 # $ export FLASK_ENV="development"
-# $ export FLASK_APP=wsgi.py,
+# $ export FLASK_APP=wsgi.py
 # $ export FLASK_RUN_PORT=8000
 # $ Flask run
 
@@ -23,7 +24,8 @@ app = Flask(__name__)
 post_objects = []
 # post_objects.append(Post(0, "¡Hola mundo!", "😄", Post.classmethod()))
 post_objects.append(Post(0, "¡Hola mundo!", "😄", Post.CONST_NUM0))
-post_objects.append(Post(1, "Regresión Lineal", "📉", "Hi there..."))
+post_objects.append(Post(1, "Regresión lineal", "📉", "Hi there..."))
+post_objects.append(Post(2, "Ejemplo Wavelet", "📉", "Hi there..."))
 post_objects.append(Post(3, "Amigo robot", "🤖", "Robot"))
 
 que = queue.Queue()
@@ -34,7 +36,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-logFile = logging.FileHandler(UPLOAD_FOLDER.replace('files','') + 'LogFile.log', mode='a')
+logFile = logging.FileHandler(UPLOAD_FOLDER.replace('files', '') + 'LogFile.log', mode='a')
 # logFile = logging.FileHandler(UPLOAD_FOLDER+'/LogFile.log', mode='a')
 logFile.setLevel(logging.ERROR)
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s %(message)s')
@@ -215,7 +217,7 @@ def linear_regression(file_path: str = ''):
             ax2.set_xlim(0, outputs['min_max'][1])
             ax2.set_ylim(0, outputs['min_max'][3])
 
-            image_path = os.path.join(app.config['UPLOAD_FOLDER'], 'image.png')
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], 'lr.png')
             plt.savefig(image_path)
             # image_path = "./"+image_path
             image_path = image_path.replace('app', '')
@@ -223,6 +225,119 @@ def linear_regression(file_path: str = ''):
     except Exception as e:
         LOG.exception("Exception occurred exc: ")
         LOG.error(f"Exception occurred err:{str(e)}")
+
+
+@app.route('/show-signal/', methods=['GET', 'POST'])
+def show_signal():
+    try:
+        if request.method == 'POST':
+            features = [np.float(x) for x in request.form.values()]
+
+            return render_template("wavelet.html", features=features)
+    except Exception as e:
+        LOG.exception("Exception occurred exc: ")
+        LOG.error(f"Exception occurred err:{str(e)}")
+    return redirect(url_for('get_all_posts'))
+
+
+@app.route("/wavelet_analysis/<string:features>", methods=['GET', 'POST'])
+def wavelet_analysis(features: str = ''):
+    try:
+        if request.method == 'POST':
+            if features:
+                features = features[1:-1].split(',')
+                freqs = np.array(list(map(lambda x: np.float(x), features)))
+
+            thread1 = Thread(target=lambda q, freqs0: q.put(wave(*freqs0)),
+                             args=(que, freqs))
+
+            thread1.start()
+            time.sleep(1.0)
+            thread1.join()
+            path = que.get()
+            # image_path = wave(*features)
+            # print(features)
+            return render_template("wavelet.html", file=None, image0=path['image_path0'],
+                                   image1=path['image_path1'], prediction_text='')
+
+        elif request.method == 'GET':
+            return redirect(url_for('get_all_posts'))
+    except Exception as e:
+        LOG.exception("Exception occurred exc: ")
+        LOG.error(f"Exception occurred err:{str(e)}")
+
+
+def wave(lofreq: float = 1.0, hifreq: float = 30.0):
+    time.sleep(0.5)
+
+    params, rate = signal_to_test()
+    signal = params['signal']
+    time_signal = params['time_signal']
+
+    nfrex = 30
+    cwt = MorletCwt(srate=rate, nfrex=nfrex, lofreq=lofreq, hifreq=hifreq, graphs=True)
+    signal_power = cwt.wavelet_windows(signal, False)
+
+    time.sleep(0.5)
+
+    coi = cwt.coi(np.size(time_signal, 0))
+    coi = 1 / coi
+
+    time.sleep(0.5)
+
+    figprops = dict(figsize=(7, 7), dpi=72)
+    fig = plt.figure(**figprops)
+
+    ax = plt.axes([0.2, 0.75, 0.65, 0.2])
+    ax.plot(time_signal, signal, '-', linewidth=1, color=[0.5, 0.5, 0.5])
+    ax.set_title('a) {}'.format("Example"))
+    ax.set_ylabel(r'{} [{}]'.format("Amplitude", "v"))
+
+    time.sleep(0.5)
+
+    bx = plt.axes([0.2, 0.37, 0.65, 0.28], sharex=ax)  # [0.1, 0.37, 0.65, 0.28]
+    freqs_cwt = cwt.freqs
+    bx.contourf(time_signal, np.log2(freqs_cwt), signal_power, cmap=plt.cm.viridis)
+
+    # plt.plot(time_signal, np.log2(coi), 'k')
+    bx.fill(np.concatenate([time_signal, time_signal[-1:], time_signal[-1:], time_signal[:1], time_signal[:1]]),
+            np.concatenate([np.log2(coi), [1e-9], np.log2(freqs_cwt[-1:]), np.log2(freqs_cwt[-1:]), [1e-9]]),
+            'k', alpha=0.3, hatch='x')
+
+    bx.set_ylim(np.log2([freqs_cwt.min(), freqs_cwt.max()]))
+    bx.set_title('b) {} Wavelet Power Spectrum ({})'.format("", "Morlet prototype"))
+    bx.set_ylabel('Freq (Hz)')
+
+    Yticks = 2 ** np.arange(np.ceil(np.log2(min(freqs_cwt))), np.ceil(np.log2(max(freqs_cwt))))
+
+    bx.set_yticks(np.log2(Yticks))
+    bx.set_yticklabels(Yticks)
+
+    image_path0 = os.path.join(app.config['UPLOAD_FOLDER'], 'signal.png')
+    plt.savefig(image_path0)
+
+    image_path1 = os.path.join(MorletCwt.UPLOAD_FOLDER, MorletCwt.GIF_PATH)
+
+    time.sleep(0.5)
+    image_path0 = image_path0.replace('app', '')
+    image_path1 = image_path1.replace('app', '')
+
+    return {'image_path0': image_path0, 'image_path1': image_path1}
+
+
+def signal_to_test():
+    rate = 1000
+    time_signal = np.arange(0, 3 * rate) / rate
+
+    fsignal1 = np.array([3, 20])
+    fsignal2 = np.array([20, 3])
+
+    gauspart = np.exp(-(time_signal - np.mean(time_signal)) ** 2 / 0.2)
+
+    signal = np.sin(2 * np.pi * time_signal * np.linspace(fsignal1[0], np.mean(fsignal1), time_signal.shape[0])) + \
+             np.sin(2 * np.pi * time_signal * np.linspace(fsignal2[0], np.mean(fsignal2), time_signal.shape[0])) + \
+             np.sin(2 * np.pi * time_signal * 20) * gauspart
+    return {'signal': signal, 'time_signal': time_signal}, rate
 
 
 # if __name__ == "__main__":

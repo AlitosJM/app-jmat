@@ -11,6 +11,7 @@ scikit-learn = "==0.23.2"
 matplotlib = "*"
 numpy = "==1.19.3"
 gunicorn = "*"
+imageio = "*"
 
 [dev-packages]
 

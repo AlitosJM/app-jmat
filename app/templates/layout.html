@@ -65,6 +65,39 @@
         </div>
     </div>
 
+{% elif post.id == 2%}
+    <div class="wrapper">
+        <div class="top">
+            <div class="title"><h1>📁</h1></div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <h1>Transformada Wavelet</h1>
+                <p><span style="color: black; font-weight:bold; text-decoration: underline">
+                    Wavelet Morlet </span>
+                </p>
+
+                <form method="POST" action="{{url_for('show_signal')}}">
+                    <input type="text" name="F_inicial" placeholder="límite inferior en frecuencia" required="required" />
+                    <input type="text" name="F_final" placeholder="límite superior en frecuencia" required="required" />
+                    <p><input type="submit" value="Calcular" class="btn btn-primary btn-block btn-large"></p>
+                </form>
+            </div>
+
+            {% if image: %}
+            <div class="card">
+<!--                <form action="/wavelet_analysis/" method="GET">-->
+                    <p><a href="/wavelet_analysis/" target="_blank">Test</a></p>
+<!--                </form>-->
+            </div>
+            {% endif %}
+            <ul class="icons">
+                <li><a href={{url_for('get_all_posts')}} class="icon solid fa-arrow-alt-circle-left"></a></li>
+                <li><a href={{url_for('get_all_posts')}} class="icon solid fa-arrow-alt-circle-right"></a></li>
+            </ul>
+        </div>
+    </div>
+
 {% elif post.id == 3%}
     <div class="wrapper">
         <div class="top">
