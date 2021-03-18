@@ -68,7 +68,7 @@ def csv_delete(path: str = ''):
             os.remove(app.config['UPLOAD_FOLDER'] + '/' + filename)
 
 
-def single_linear_regression(path: str = '', x_to_predict: str = '') -> dict:
+def single_linear_regression(path: str = '', x_to_predict: int = 111222333) -> dict:
     time.sleep(0.5)
     data = pd.read_csv(app.config['UPLOAD_FOLDER'] + '/' + path)
     time.sleep(0.5)
@@ -255,7 +255,6 @@ def wavelet_analysis(features: str = ''):
                 temp = features
                 features = features[1:-1].split(',')
                 freqs = np.array(list(map(lambda x: np.float(x), features)))
-                print(freqs)
 
             thread1 = Thread(target=lambda q, freqs0: q.put(wave(*freqs0)),
                              args=(que, freqs))

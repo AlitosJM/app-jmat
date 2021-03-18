@@ -78,8 +78,8 @@
                 </p>
 
                 <form method="POST" action="{{url_for('show_signal')}}">
-                    <input type="text" name="F_inicial" placeholder="límite inferior en frecuencia" required="required" />
-                    <input type="text" name="F_final" placeholder="límite superior en frecuencia" required="required" />
+                    <input type="number" min="1" name="F_inicial" placeholder="límite inferior en frecuencia" required="required" />
+                    <input type="number" max="60" name="F_final" placeholder="límite superior en frecuencia" required="required" />
                     <p><input type="submit" value="Calcular" class="btn btn-primary btn-block btn-large"></p>
                 </form>
             </div>

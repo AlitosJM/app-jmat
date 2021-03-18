@@ -22,6 +22,8 @@
     <list default="true" id="8cbeb064-b21f-405e-84d8-e525702df7aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/LogFile.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/LogFile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves0.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves1.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves10.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves10.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/files/freqWaves11.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/freqWaves11.png" afterDir="false" />
@@ -55,7 +57,7 @@
       <change beforePath="$PROJECT_DIR$/app/static/files/signal.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/signal.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/files/waves.gif" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/files/waves.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/forecasting.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/forecasting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/wavelet.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/wavelet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
