@@ -12,8 +12,8 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 	<script>
 
-    const start_task = () => {
-        var source = new EventSource("/progress/");
+    const start_task = (delay) => {
+        var source = new EventSource(`/progress/${delay}`);
 
 	    source.onmessage = (event) => {
 		$('.progress-bar').css('width', event.data+'%').attr('aria-valuenow', event.data);
@@ -42,7 +42,7 @@
                 <!--<input type="text" name="sales in first month" placeholder="sales in first month" required="required" />-->
                     <input type="text" name="input1" placeholder="Variable independiente" required="required" />
 <!--                    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>-->
-                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task();">Calcular</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="start_task(0.5);">Calcular</button>
                 </form>
                <br>
                <br>

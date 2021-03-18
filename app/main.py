@@ -116,15 +116,22 @@ def home():
         return render_template("intro.html")
 
 
-@app.route("/progress/")
-def progress():
-    def generate():
+@app.route("/progress/<string:delay>")
+def progress(delay: str = ''):
+    def generate(delay1: float = 0.5):
         x = 0
         while x <= 100:
             yield "data:" + str(x) + "\n\n"
             x = x + 10
-            time.sleep(0.5)
-    return Response(generate(), mimetype='text/event-stream')
+            time.sleep(delay1)
+
+    if not delay:
+        return Response(generate(), mimetype='text/event-stream')
+    else:
+        delay2 = np.float(delay)
+        return Response(generate(delay2), mimetype='text/event-stream')
+
+
 
 
 @app.route('/home/')
@@ -248,6 +255,7 @@ def wavelet_analysis(features: str = ''):
                 temp = features
                 features = features[1:-1].split(',')
                 freqs = np.array(list(map(lambda x: np.float(x), features)))
+                print(freqs)
 
             thread1 = Thread(target=lambda q, freqs0: q.put(wave(*freqs0)),
                              args=(que, freqs))
@@ -258,8 +266,8 @@ def wavelet_analysis(features: str = ''):
             path = que.get()
             # image_path = wave(*features)
             # print(features)
-            return render_template("wavelet.html", file=temp, image0=path['image_path0'],
-                                   image1=path['image_path1'], prediction_text='')
+            return render_template("wavelet.html", features=temp, image0=path['image_path0'],
+                                   image1=path['image_path1'])
 
         elif request.method == 'GET':
             return redirect(url_for('get_all_posts'))
