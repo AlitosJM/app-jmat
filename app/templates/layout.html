@@ -78,8 +78,8 @@
                 </p>
 
                 <form method="POST" action="{{url_for('show_signal')}}">
-                    <input type="number" min="1" name="F_inicial" placeholder="límite inferior en frecuencia" required="required" />
-                    <input type="number" max="60" name="F_final" placeholder="límite superior en frecuencia" required="required" />
+                    <input type="number" min="1" max="20" name="F_inicial" placeholder="límite inferior en frecuencia" required="required" />
+                    <input type="number" max="60" min="30" name="F_final" placeholder="límite superior en frecuencia" required="required" />
                     <p><input type="submit" value="Calcular" class="btn btn-primary btn-block btn-large"></p>
                 </form>
             </div>
@@ -114,6 +114,30 @@
             <li><a href={{url_for('get_all_posts')}} class="icon solid fa-arrow-alt-circle-right"></a></li>
         </ul>
 
+    </div>
+{% elif post.id == 4 %}
+    <div class="wrapper">
+        <div class="top">
+            <div class="title"><h1>☕</h1></div>
+        </div>
+        <div class="content">
+            <div class="card">
+                    <h1> {{ post.title }}</h1>
+                    <h2> {{ post.subtitle }}</h2>
+                    <p>
+                        {{ post.body }}
+                        <video width="100%" height="100%" controls>
+                            <source src="/static/videos/UipathBasico.webm" type='video/webm; codecs="vp8, vorbis"' />
+                        </video>
+                        {% include 'about.html' %}
+                     </p>
+            </div>
+
+            <ul class="icons">
+                <li><a href={{url_for('get_all_posts')}} class="icon solid fa-arrow-alt-circle-left"></a></li>
+                <li><a href={{url_for('get_all_posts')}} class="icon solid fa-arrow-alt-circle-right"></a></li>
+            </ul>
+        </div>
     </div>
 {% else %}
     <div class="wrapper">

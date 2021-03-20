@@ -217,3 +217,27 @@ Traceback (most recent call last):
     freqs = np.array(list(map(lambda x: np.float(x), features)))
 ValueError: could not convert string to float: ' 1. 50.'
 2021-03-18 04:50:41,283 ERROR logFile Exception occurred err:could not convert string to float: ' 1. 50.'
+2021-03-20 02:24:47,743 ERROR logFile Exception occurred exc: 
+Traceback (most recent call last):
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\main.py", line 160, in show_post
+    return render_template("layout.html", post=requested_post)
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\jmat\.virtualenvs\flask05-b-tteyow\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\JMAT\PycharmProjects\Flask05\app\templates\layout.html", line 160, in template
+    {% endif %}
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-03-20 02:24:47,823 ERROR logFile Exception occurred err:Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.

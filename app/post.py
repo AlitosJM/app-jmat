@@ -10,6 +10,9 @@ class Post:
 
     Estas páginas son parte de mi primer proyecto de diseño web y la he desarrollado en Flask para Python.
     '''
+    CONST_NUM1 = '''
+    Ejemplo básico bot con Uipath. Escribe datos en una web y muestra resultados en cajas de texto.
+    '''
 
     def __init__(self, post_id, title, subtitle, body):
         self.id = post_id

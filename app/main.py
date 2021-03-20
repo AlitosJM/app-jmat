@@ -27,6 +27,7 @@ post_objects.append(Post(0, "¡Hola mundo!", "😄", Post.CONST_NUM0))
 post_objects.append(Post(1, "Regresión lineal", "📉", "Hi there..."))
 post_objects.append(Post(2, "Ejemplo Wavelet", "📉", "Hi there..."))
 post_objects.append(Post(3, "Amigo robot", "🤖", "Robot"))
+post_objects.append(Post(4, "Uipath bot", "🤖", "Uipath"))
 
 que = queue.Queue()
 
